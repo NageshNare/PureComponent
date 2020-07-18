@@ -1,9 +1,17 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable no-undef */
+/* eslint-disable import/no-unresolved */
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { Configure, Shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import Child1 from './Child1';
+
+Configure({ adapter: new Adapter() });
+
+describe('child1 item', () => {
+  it('should have one child component', () => {
+    const wrapper = Shallow(<Child1 />);
+    expect(wrapper.find(Child1)).toHaveLength(1);
+  });
 });
