@@ -3,6 +3,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-filename-extension */
+//added new changes
 import React, { PureComponent } from 'react';
 
 class Child2 extends PureComponent {
